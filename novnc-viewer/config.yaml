@@ -1,0 +1,23 @@
+name: "noVNC Dynamic Viewer"
+description: "Stable noVNC bridge that can switch targets dynamically via a file or configuration."
+version: "1.0.0"
+slug: "novnc_viewer"
+init: false
+arch:
+  - aarch64
+  - amd64
+startup: application
+boot: auto
+ingress: true
+ingress_port: 8080
+panel_icon: "mdi:monitor-shimmer"
+map:
+  - "share:rw"
+options:
+  vnc_host: "1.2.3.4"
+  vnc_port: 5903
+  config_file_name: "vnc_target.txt"
+schema:
+  vnc_host: str
+  vnc_port: int
+  config_file_name: str
